@@ -1,0 +1,20 @@
+<div class="container">
+<div class="panel panel-info">
+<div class="panel-heading">
+<h4>Pending Requests</h4>
+</div>
+<div class="panel-body">
+<ul style="list-style:none">
+<li ng-repeat="pendingRequest in pendingRequests">
+<hr>
+<img src="http://localhost:8080/project2middleware/getimage?email={{pendingRequest.fromid.email}}" alt="Upload Image" height="140px" width="145px"/><br>
+<b>Email:</b>{{pendingRequest.fromId.email}}<br>
+<b>Name:</b>{{pendingRequest.fromId.firstname}}&nbsp;{{pendingRequest.fromId.lastname}}<br>
+<b>Mobile No:</b>{{pendingRequest.fromId.phonenumber}}<br><br>
+<button class="btn btn-info" ng-click="acceptRequest(pendingRequest)">Accept Friend Request</button>
+<button class="btn btn-danger" ng-click="deleteRequest(pendingRequest)">Delete Friend Request</button>
+</li>
+</ul>
+</div>
+</div>
+</div>

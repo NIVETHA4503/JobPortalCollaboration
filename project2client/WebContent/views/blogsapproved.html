@@ -1,0 +1,21 @@
+<b ng-show="user==undefined">Please login</b>
+<div ng-show="user!=undefined">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<b>List Of Blogs Approved</b>
+		</div>
+		<div class="panel-body">
+		<b ng-show="blogsApproved.length==0">No approved blogs</b>
+			<ul style="list-style:none">
+				<li ng-repeat="blogPost in blogsApproved">
+					<!-- approved value as true -->
+					<!-- select * from blogpost where blogpostid=? , blogindetail.html (content ,likes,comments)-->
+					<a href="#/getblogapproved/{{blogPost.blogPostId}}"> Blog Title : {{blogPost.blogTitle}}</a><br><!-- blogindetail.html  -->
+					<b>Posted On : {{blogPost.postedOn | date:'dd-MMM-yyyy hh:mm:ss'}}</b><br>
+					<b>Author :{{blogPost.author.email}}</b><br>
+					<hr>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

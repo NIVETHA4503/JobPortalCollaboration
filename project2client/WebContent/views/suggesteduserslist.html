@@ -1,0 +1,27 @@
+<div class="panel panel-primary">
+<div class="panel-heading">
+<b>List Of Suggested Users</b>
+</div>
+<div class="panel-body">
+<ul style="list-style:none;">
+<li ng-repeat="suggestedUser in suggestedUsers">
+<div class="media">
+			<div class="media-left">
+				<img
+					src="http://localhost:8080/project2middleware/getimage?email={{suggestedUser.email}}"
+					alt="No Image" height="60px" width="60px"><br>
+			</div>
+
+<div class="media-body">
+<b>Email: </b>{{suggestedUser.email}}<br>
+<b>Name:</b>{{suggestedUser.firstname}} &nbsp; {{suggestedUser.lastname}}<br>
+</div>
+<button class="btn btn-primary" ng-click="addFriend(suggestedUser)">Add Friend</button>
+<!-- suggestedUser is a User object, this is the value for toId property in friend obj -->
+</div>
+<hr>
+</li>
+</ul>
+</div>
+<b> .  </b>
+</div>

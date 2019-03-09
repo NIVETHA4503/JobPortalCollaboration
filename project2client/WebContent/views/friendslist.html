@@ -1,0 +1,21 @@
+<div class="container">
+<div class="panel panel-info">
+<div class="panel-heading">
+<h4>Friends</h4>
+</div>
+<div class="panel-body">
+<ul style="list-style:none">
+<li ng-repeat="friend in friends"><!-- friends is an Array of User object -->
+<b>Email:</b>{{friend.email}}<br>
+<b>Name:</b>{{friend.firstname}}&nbsp;{{friend.lastname}}<br>
+<b>Mobile Number:</b>{{friend.phonenumber}}<br>
+<img src="http://localhost:8080/project2middleware/getimage?email={{friend.email}}" alt="No Image" height="60px" width="60px">
+<br>
+
+<hr>
+</li>
+</ul>
+</div>
+</div>
+
+</div>

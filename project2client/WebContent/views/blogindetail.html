@@ -1,0 +1,27 @@
+<!-- result of the query select * from blogpost where blogpostid=? -->
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<b>Blog Title:</b>{{blogPost.blogTitle}}<br> <b>Posted On :</b>
+		{{blogPost.postedOn | date:'dd-MMM-yyyy :hh:mm:ss'}}<br> <b>Author
+			:</b>{{blogPost.author.email}}<br>
+	</div>
+	<div class=panel-body>
+		<div>
+			<p ng-bind-html="content">
+				<br>
+		</div>
+		<div>
+			<a ng-click="updateLikes(blogPost.blogPostId)"><span class="glyphicon glyphicon-thumbs-up" ng-class="isLiked?'liked':'default'"></span></a> likes
+			{{blogPost.likes}}<br>
+			<textarea rows="4" cols="70" ng-model="commentTxt"></textarea> 
+			<button ng-click="addBlogComment(commentTxt,blogPost)" class="btn btn-primary">POST COMMENT</button>
+			{{blogComment}}<br>
+			<a ng-click="getAllBlogComments(blogPost.blogPostId)">show comments</a><br>
+			<ul ng-repeat="blogComment in blogComments">
+			 <li>
+			    {{blogComment.commentTxt}} &nbsp;, {{blogComment.commentedBy.firstname}},{{blogComment.commentedBy.lastname}}, 
+			    &nbsp; {{blogComment.commentedOn | date:'dd-MMMM-yyyy :hh:mm:ss' }}
+			 </li>
+			</ul>
+		</div>
+	</div>
