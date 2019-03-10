@@ -27,14 +27,12 @@ public class Chat {
 	
 
 	
-//	public void setFrom(String from) {
-//		this.from = from;
-//	}
-//
-//	@Override
-//	public String toString() {
-//		return "Chat [message=" + message + ", to=" + to + "]";
-//	}
+	
+
+	@Override
+	public String toString() {
+		return "Chat [message=" + message + ", to=" + to + "]";
+	}
 	
 	
 	

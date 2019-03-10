@@ -11,5 +11,3 @@ void saveOrUpdateProfilePicture(ProfilePicture profilePicture);
 
 ProfilePicture  getProfilePicture(String email);
 }
-
-

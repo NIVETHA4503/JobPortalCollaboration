@@ -13,9 +13,9 @@ public class WebAppConfig extends WebMvcConfigurerAdapter
 	{
 	public WebAppConfig(){System.out.println("WebAppConfig class is loaded and instantiated");
 	}
-	//@Bean(name="multipartResolver")
-	//public CommonsMultipartResolver multipartResolver() {
-		// CommonsMultipartResolver multipartResolver=new CommonsMultipartResolver();
-		//return multipartResolver;
-	//}
-}
+	@Bean(name="multipartResolver")
+	public CommonsMultipartResolver commonsMultipartResolver(){
+		CommonsMultipartResolver commonsMultipartResolver=new CommonsMultipartResolver();
+		return commonsMultipartResolver;
+	}
+	}
