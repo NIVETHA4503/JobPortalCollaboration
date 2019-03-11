@@ -28,7 +28,6 @@ app.config(function($routeProvider){
 	.when('/suggestedusers',{controller:'FriendCtrl',templateUrl:'views/suggesteduserslist.html'})
 	.when('/pendingrequests',{controller:'FriendCtrl',templateUrl:'views/pendingrequests.html'})
 	.when('/listoffriends',{controller:'FriendCtrl',templateUrl:'views/friendslist.html'})
-	.when('/chat',{controller:'ChatCtrl',templateUrl:'views/chat.html'})
 	.otherwise({controller:'NotificationCtrl',templateUrl:'views/home.html'})
 })
 app.run(function($rootScope,UserService,$location,$cookieStore){//when module gets instantiated, get newly created $rootScope, add logout function to the $rootScope objecgt

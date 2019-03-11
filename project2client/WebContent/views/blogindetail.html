@@ -16,12 +16,15 @@
 			<textarea rows="4" cols="70" ng-model="commentTxt"></textarea> 
 			<button ng-click="addBlogComment(commentTxt,blogPost)" class="btn btn-primary">POST COMMENT</button>
 			{{blogComment}}<br>
-			<a ng-click="getAllBlogComments(blogPost.blogPostId)">show comments</a><br>
+			<a ng-click="getAllBlogComments(blogPost.blogPostId)">Show Comments</a><br>
 			<ul ng-repeat="blogComment in blogComments">
 			 <li>
-			    {{blogComment.commentTxt}} &nbsp;, {{blogComment.commentedBy.firstname}},{{blogComment.commentedBy.lastname}}, 
-			    &nbsp; {{blogComment.commentedOn | date:'dd-MMMM-yyyy :hh:mm:ss' }}
+			    {{blogComment.commentTxt}} <br> 
+			    {{blogComment.commentedBy.firstname}}&nbsp;{{blogComment.commentedBy.lastname}} on
+			    {{blogComment.commentedOn | date:'dd-MMMM-yyyy :hh:mm:ss' }}<br>
 			 </li>
+
 			</ul>
 		</div>
+	</div>
 	</div>

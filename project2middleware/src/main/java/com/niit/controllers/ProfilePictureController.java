@@ -43,7 +43,7 @@ public ResponseEntity<?> uploadProfilePicture(HttpSession session,@RequestParam 
 			return new ResponseEntity<ProfilePicture>(profilePicture,HttpStatus.OK);
 }
 	//This data will be used in img tag
-    //url will be used in src attribute of an img tag, src needs binary data
+    //url will be used in src attribute of an img tag, src needs sbinary data
 //in client side <img src="http://..../getimage?email='james.s@niit.com'" alt="..">
     @RequestMapping(value="/getimage",method=RequestMethod.GET)
     public @ResponseBody byte[] getImage(@RequestParam String email,HttpSession session){

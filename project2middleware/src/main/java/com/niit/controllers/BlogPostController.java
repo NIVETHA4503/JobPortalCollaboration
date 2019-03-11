@@ -130,8 +130,7 @@ public ResponseEntity<?> rejectBlogPost(HttpSession session,@PathVariable String
 		//CHECK IF THE REQUEST FROM ADMIN (LOGGED IN USER IS ADMIN)
 		User user=userDao.getUser(email);
 		if(!user.getRole().equals("ADMIN")){//Display the error message in the blogswaitingforapproval.html
-			ErrrorClazz errorClazz=
-				new ErrrorClazz(7,"Access Denied.. You are not authorized to view the blogs waiting for approval");
+			ErrrorClazz errorClazz=new ErrrorClazz(7,"Access Denied.. You are not authorized to view the blogs waiting for approval");
 			return new ResponseEntity<ErrrorClazz>(errorClazz,HttpStatus.UNAUTHORIZED);
 		}
 		

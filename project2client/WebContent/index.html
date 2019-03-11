@@ -23,7 +23,7 @@
 <li><a href="#/addjob" ng-show="user.role=='ADMIN'">Add Job</a></li><!-- view is jobform.html -->
 
 <!-- 'user' is a $rootScope variable which will get added once the user log in successfully -->
-<li><a href="#/getalljobs" ng-show="user!=undefined" >Get All Jobs</a></li><!-- view is jobslist.html,show this link only if user is logged in -->
+<li><a href="#/getalljobs" ng-show="user!=undefined">Get All Jobs</a></li><!-- view is jobslist.html,show this link only if user is logged in -->
 <li><a href="#/registration" ng-show="user==undefined">Sign Up</a></li> <!-- view is registrationform.html -->
 <li><a href="#/login" ng-show="user==undefined"><span class="glyphicon glyphicon-log-in">Sign In</span></a></li><!-- view is login.html -->
 <li><a href="" ng-show="user!=undefined">{{user.firstname}}&nbsp;{{user.lastname}}</a></li>
@@ -66,7 +66,7 @@
 </ul>
 </li>
 
-<li><a href="#/chat" ng-show="user!=undefined">Chat</a></li>
+
 
 
 <li><a href="#/uploadprofilepic" ng-show="user!=undefined">
@@ -83,18 +83,17 @@
 </div>
 </body>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" href="resources/css/glyphiconcolor.css">
 <link rel="stylesheet" href="resources/css/notification.css">
-
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+	<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+		<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
-
 <script type="text/javascript" src="controllers/jobcontroller.js"></script>
 <script type="text/javascript" src="services/jobservice.js"></script>
 
@@ -103,19 +102,12 @@
 
 <script type="text/javascript" src="controllers/blogpostcontroller.js"></script>
 <script type="text/javascript" src="controllers/blogindetailcontroller.js"></script>
-
 <script type="text/javascript" src="services/blogpostservice.js"></script>
-<script type="text/javascript" src="controllers/blogpostcontroller.js"></script>
-
 <script type="text/javascript" src="controllers/notificationcontroller.js"></script>
 <script type="text/javascript" src="services/notificationservice.js"></script>
-
 <script type="text/javascript" src="controllers/friendcontroller.js"></script>
 <script type="text/javascript" src="services/friendservice.js"></script>
 
-<script type="text/javascript" src="controllers/chatcontroller.js"></script>
-<script type="text/javascript" src="services/chatservice.js"></script>
 
-<script type="text/javascript" src="js/sockjs/sockjs.min.js"></script>
-<script type="text/javascript" src="js/stomp/dist/stomp.min.js"></script>
 </html>
+
