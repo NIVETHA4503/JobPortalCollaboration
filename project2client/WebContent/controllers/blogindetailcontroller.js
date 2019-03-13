@@ -95,7 +95,8 @@ app.controller('BlogInDetailCtrl',function($scope,BlogPostService,$routeParams,$
     				   if(response.status==401)
     					   $location.path('/login')
     			   })
-       }
+       
+}
 })
 
 

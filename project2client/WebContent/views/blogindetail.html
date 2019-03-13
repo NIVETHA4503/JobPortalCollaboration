@@ -14,17 +14,36 @@
 			<a ng-click="updateLikes(blogPost.blogPostId)"><span class="glyphicon glyphicon-thumbs-up" ng-class="isLiked?'liked':'default'"></span></a> likes
 			{{blogPost.likes}}<br>
 			<textarea rows="4" cols="70" ng-model="commentTxt"></textarea> 
+			
+			
 			<button ng-click="addBlogComment(commentTxt,blogPost)" class="btn btn-primary">POST COMMENT</button>
-			{{blogComment}}<br>
+			<div ng-show="blogComment!=undefined">
+<b>Comment		:</b>{{blogComment.commentTxt}}<br>
+<b>Name			:</b>{{blogComment.commentedBy.firstname}}&nbsp;{{blogComment.commentedBy.lastname}}<br>
+<b>Commented On	:</b>{{blogComment.commentedOn | date:'dd/MM/yyyy:hh:mm:ss'}}<br>
+			</div>
+			
+			<div>
+			
 			<a ng-click="getAllBlogComments(blogPost.blogPostId)">Show Comments</a><br>
 			<ul ng-repeat="blogComment in blogComments">
 			 <li>
-			    {{blogComment.commentTxt}} <br> 
-			    {{blogComment.commentedBy.firstname}}&nbsp;{{blogComment.commentedBy.lastname}} on
-			    {{blogComment.commentedOn | date:'dd-MMMM-yyyy :hh:mm:ss' }}<br>
+			    {{blogComment.commentTxt}}<br>
+			    {{blogComment.commentedBy.firstname}}&nbsp;,{{blogComment.commentedBy.lastname}}<br>
+			    {{blogComment.commentedOn | date:'dd/MM/yyyy:hh:mm:ss' }}<br>
 			 </li>
-
 			</ul>
-		</div>
+
+	</div>	
+</div>
+			
+			
+			
+			
+			
+			
+			
+			
+				
 	</div>
-	</div>
+</div>
