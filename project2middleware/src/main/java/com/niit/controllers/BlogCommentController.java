@@ -41,7 +41,7 @@ private UserDao userDao;
 		blogCommentDao.addBlogComment(blogComment);
 		return new ResponseEntity<BlogComment>(blogComment,HttpStatus.OK);
 	}
-    @RequestMapping(value="/getblogcomments",method=RequestMethod.GET)
+    @RequestMapping(value="/getblogcomments/{blogPostId}",method=RequestMethod.GET)
     public ResponseEntity<?> getAllBlogComments(HttpSession session,@PathVariable int blogPostId){
     	//Check for Authenticated- only logged user can post a blog 
     			String email=(String)session.getAttribute("loginId");
@@ -52,4 +52,15 @@ private UserDao userDao;
     		List<BlogComment> blogComments=	blogCommentDao.getAllBlogComments(blogPostId);
     		return new ResponseEntity<List<BlogComment>>(blogComments,HttpStatus.OK);
     }
+    @RequestMapping(value="/deleteblogcomment",method=RequestMethod.PUT)
+	public ResponseEntity<?> deleteBlogComment(@RequestBody BlogComment blogComment, HttpSession session){
+		String email = (String) session.getAttribute("loginId"); // Check for
+		// Authentication
+		if (email == null) {
+			ErrrorClazz errorClazz = new ErrrorClazz(4, "Unauthorized access.. please login.....");
+			return new ResponseEntity<ErrrorClazz>(errorClazz, HttpStatus.UNAUTHORIZED);
+		}
+		blogCommentDao.deleteBlogComment(blogComment);
+		return new ResponseEntity<BlogComment>(blogComment,HttpStatus.OK);
+	}
 }

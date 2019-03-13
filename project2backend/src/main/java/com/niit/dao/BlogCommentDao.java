@@ -7,5 +7,6 @@ import com.niit.models.BlogComment;
 public interface BlogCommentDao {
 void addBlogComment(BlogComment blogComment);
 List<BlogComment> getAllBlogComments(int blogPostId);
+void deleteBlogComment(BlogComment blogComment);
 }
 

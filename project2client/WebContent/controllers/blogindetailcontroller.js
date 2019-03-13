@@ -96,6 +96,24 @@ app.controller('BlogInDetailCtrl',function($scope,BlogPostService,$routeParams,$
     					   $location.path('/login')
     			   })
        
+    			
+    	$scope.deleteBlogComment=function(blogComment){
+    		BlogPostService.deleteBlogComment(blogComment).then(
+    				function(response){
+    				
+    				$scope.message="Comment deleted successfully!";
+    				$scope.blogComments=undefined
+    				getAllBlogComments(blogComment.blogPost.blogPostId);
+    			},
+    			function(response){
+    				if(Response.status==401)
+    					$location.path('/login')
+    			})
+    		}
+    		
+    		$scope.showTextArea=function(){
+    			$scope.isRejected=!$scope.isRejected
+    		}
 }
 })
 

@@ -46,6 +46,9 @@ app.factory('BlogPostService',function($http){
 	blogPostService.getAllBlogComments=function(blogPostId){
 		return $http.get(BASE_URL + "/getblogcomments/"+blogPostId);
 	}
+	blogPostService.deleteBlogComment=function(blogComment){
+		return $http.put(BASE_URL+'/deleteblogcomment',blogComment)
+	}
 	return blogPostService;
 })
 //5 - creating an object ,

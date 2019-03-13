@@ -23,11 +23,17 @@ private SessionFactory sessionFactory;
 
 	public List<BlogComment> getAllBlogComments(int blogPostId) {
 		Session session=sessionFactory.getCurrentSession();
-		Query query=session.createQuery("from BlogComment where blogPost.blogPostId=?");
+		Query query=session.createQuery("from BlogComment where blogPost=?");
 		query.setInteger(0, blogPostId);
 		List<BlogComment> blogComments=query.list();
 		return blogComments;
 		
+	}
+
+	public void deleteBlogComment(BlogComment blogComment) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();		
+		session.delete(blogComment);
 	}
 
 }

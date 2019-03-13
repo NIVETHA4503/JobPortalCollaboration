@@ -24,25 +24,30 @@
 			</div>
 			
 			<div>
-			
-			<a ng-click="getAllBlogComments(blogPost.blogPostId)">Show Comments</a><br>
-			<ul ng-repeat="blogComment in blogComments">
-			 <li>
-			    {{blogComment.commentTxt}}<br>
-			    {{blogComment.commentedBy.firstname}}&nbsp;,{{blogComment.commentedBy.lastname}}<br>
-			    {{blogComment.commentedOn | date:'dd/MM/yyyy:hh:mm:ss' }}<br>
-			 </li>
-			</ul>
 
-	</div>	
-</div>
+			
+<br>
+<a href="" ng-click="getAllBlogComments(blogPost.blogPostId)">View All Comments</a><br><br>  <span style="color:purple;">{{message}}</span><br><br>
+<ul style="list-style:none">
+<span style="float:center;" ng-show="blogComments==''">There is no comments, you are the first one to comment is blog!</span>
+<li ng-repeat="blogComment in blogComments | orderBy:'-commentedOn'">
+<b>Comment : </b>{{blogComment.commentTxt}}<br>
+<b>CommentedBy :
+<span ng-if="user.email!=blogComment.commentedBy.email">{{blogComment.commentedBy.email}},</span>&nbsp;<br>
+<span ng-if="user.email==blogComment.commentedBy.email">You</span>
+CommentedOn : {{blogComment.commentedOn | date:'yyyy:MM:dd:mm:ss'}}</b>
+  
+<a href="" ng-click="deleteBlogComment(blogComment)"><span ng-show="user.email==blogComment.commentedBy.email" class="pull-right glyphicon glyphicon-trash" title="Delete This Comment"></span></a> 
+<hr>
+</l i>
+</ul>
 			
 			
 			
 			
 			
-			
-			
+	</div>
+	</div>		
 			
 				
 	</div>
